@@ -27,7 +27,7 @@ public class ParkingSpotService {
     }
 
     public boolean existByApartmentAndBlock(String apartment, String block) {
-        return parkingSpotModelRepository.existsByApartmentAndBlock(apartment,block);
+        return parkingSpotModelRepository.existsByApartmentAndBlock(apartment, block);
     }
 
     @Transactional
@@ -41,5 +41,10 @@ public class ParkingSpotService {
 
     public Optional<ParkingSpotModel> findById(UUID id) {
         return parkingSpotModelRepository.findById(id);
+    }
+
+    @Transactional
+    public void delete(ParkingSpotModel parkingSpotModel) {
+        parkingSpotModelRepository.delete(parkingSpotModel);
     }
 }
